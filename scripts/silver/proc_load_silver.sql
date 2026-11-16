@@ -42,7 +42,7 @@ BEGIN
 			cst_firstname,
 			cst_lastname,
 			cst_marital_status,
-			cst_gnder,
+			cst_gender,
 			cst_create_date)
 		SELECT
 		cst_id,
@@ -53,10 +53,10 @@ BEGIN
 				 WHEN UPPER(TRIM(cst_marital_status)) = 'M' THEN 'Married'
 				 ELSE 'n/a'
 		END cst_marital_status,
-			CASE WHEN UPPER(TRIM(cst_gnder)) = 'F' THEN 'Female'
-				 WHEN UPPER(TRIM(cst_gnder)) = 'M' THEN 'Male'
+			CASE WHEN UPPER(TRIM(cst_gender)) = 'F' THEN 'Female'
+				 WHEN UPPER(TRIM(cst_gender)) = 'M' THEN 'Male'
 				ELSE 'n/a'
-		END cst_gnder,
+		END cst_gender,
 		cst_create_date
 		FROM(
 		SELECT *,
